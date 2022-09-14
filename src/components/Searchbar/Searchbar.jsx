@@ -1,16 +1,31 @@
 import React, { Component } from 'react';
-
-
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 class SearchBar extends Component {
     state = {
-        onSubmit: "",
+        inputString: "",
     }
 
+    handeChanger = event => {
+        this.setState({ inputString: event.target.value })
+        // console.log(this.state.inputString)
+    }
+
+    handleSubmit = event => {
+        event.preventDefault();
+
+        if (this.state.inputString.trim() === "") {
+            toast.error('Put any text here, please <<==')
+            return
+        }
+        this.props.onInputString(this.state.inputString)
+        // console.log(this.state.inputString)
+        this.setState({ inputString: "", })
+    }
 
     render() {
-        return (<header className="searchbar">
-            <form className="form" type="submit">
+        return (<header className="searchbar" >
+            <form className="form" type="submit" onSubmit={this.handleSubmit}>
                 <button type="submit" className="button">
                     <span className="button-label" type="submit" >Search</span>
                 </button>
@@ -19,6 +34,8 @@ class SearchBar extends Component {
                     className="input"
                     type="text"
                     autocomplete="off"
+                    value={this.state.inputString}
+                    onChange={this.handeChanger}
                     autofocus
                     placeholder="Search images and photos"
                 />
