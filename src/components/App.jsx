@@ -41,7 +41,7 @@ export class App extends Component {
 
       <div style={{ margin: 50 }}>
         <Searchbar onInputString={this.handleFormSubmit} />
-        <div>строка состояния App: {this.state.inputString}</div>
+        {/* <div>строка состояния App: {this.state.inputString}</div> */}
         <ToastContainer autoClose={3000} />
         <API inputString={this.state.inputString} items={() => this.componentDidMount()} />
         {/* <ImageGallery items={articles} /> */}
