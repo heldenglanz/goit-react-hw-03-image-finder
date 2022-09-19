@@ -6,7 +6,7 @@ import ImageGalleryItem from '../ImageGalleryItem';
 const ImageGallery = ({ items }) => {
 
     return (
-        <ul className="gallery">
+        <ul className="ImageGallery">
             {items.map(item => {
                 return (
                     <li key={item.id}>
