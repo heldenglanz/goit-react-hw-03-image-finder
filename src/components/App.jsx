@@ -18,11 +18,11 @@ export class App extends Component {
     this.setState({ inputString: inputString });
     // console.log(this.state.inputString);
   }
-
-  // items = this.props;
   componentDidMount = items => {
     this.setState({ articles: items });
   }
+  // items = this.props;
+
   // componentDidMount() {
   //   fetch('https://pixabay.com/api/?q=cat&page=1&key=29903218-d7c1d4763f314c7a924bce31a&image_type=photo&orientation=horizontal&per_page=12')
   //     .then(res => res.json())
@@ -43,7 +43,7 @@ export class App extends Component {
         <Searchbar onInputString={this.handleFormSubmit} />
         {/* <div>строка состояния App: {this.state.inputString}</div> */}
         <ToastContainer autoClose={3000} />
-        <API inputString={this.state.inputString} items={() => this.componentDidMount()} />
+        <API inputString={this.state.inputString} items={this.componentDidMount} />
         {/* <ImageGallery items={articles} /> */}
       </div>
 
