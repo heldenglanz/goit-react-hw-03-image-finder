@@ -44,7 +44,7 @@ export default class API extends Component {
     }
     render() {
         const { inputString } = this.props;
-        const { imageArray, error, status } = this.state;
+        const { error, imageArray, status } = this.state;
         if (status === 'idle') {
             return <div>введіть щось у рядок</div>
         }
@@ -52,7 +52,7 @@ export default class API extends Component {
             return <Loader inputString={inputString} />
         }
         if (status === 'rejected') {
-            return <p>здається, це не працює : {error}
+            return <p>здається, це не працює : {error.message}
             </p>
         }
 
@@ -61,8 +61,9 @@ export default class API extends Component {
         }
         // return (
         //     <>
+        // {status==='rejected && <h1>{error.message}</h1>}
         //         <ImageGallery items={imageArray} />
-        //         {error && <h1>{error.message}</h1>}
+        //       
         //     </>
         //     //   <div>Строка поиска компонента API: {inputString}</div> 
         // )
