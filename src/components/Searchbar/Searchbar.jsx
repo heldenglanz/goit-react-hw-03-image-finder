@@ -30,7 +30,7 @@ class SearchBar extends Component {
                 <input
                     className="input"
                     type="text"
-                    autocomplete="off"
+                    autoComplete="off"
                     value={this.state.inputString}
                     onChange={this.handeChanger}
                     autoFocus

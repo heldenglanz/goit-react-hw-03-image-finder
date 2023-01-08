@@ -1,5 +1,7 @@
 @import-normalize;
+
 /* bring in normalize.css styles */
+
 
 body {
   margin: 0;
@@ -42,6 +44,14 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.mainString {
+  margin: 50px;
+  padding: 50px;
+  color: #303f9f;
+  height: 50px;
+  text-decoration-color: aqua;
 }
 
 /*
